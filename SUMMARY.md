@@ -1,6 +1,6 @@
 # Table of contents
 
-* [iOS-Core-Animation-Advanced-Techniques](README.md)
+* [iOS 核心动画：高级动画技巧](README.md)
 * [1. 图层树](tu-ceng-shu.md)
 * [2. 寄宿图](ji-su-tu.md)
 * [3. 图层几何学](tu-ceng-ji-he-xue.md)
