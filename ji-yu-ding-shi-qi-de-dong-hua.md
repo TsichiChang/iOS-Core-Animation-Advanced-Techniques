@@ -1,4 +1,4 @@
-# 基于定时器的动画
+# 11. 基于定时器的动画
 
 > _我可以指导你，但是你必须按照我说的做。_ -- 骇客帝国
 
@@ -397,7 +397,7 @@ void updateShape(cpShape *shape, void *unused)
 @end
 ```
 
-![&#x56FE;11.1](../.gitbook/assets/11.1.jpeg)
+![&#x56FE;11.1](.gitbook/assets/11.1.jpeg)
 
 图11.1 一个木箱图片，根据模拟的重力掉落
 
@@ -467,7 +467,7 @@ void updateShape(cpShape *shape, void *unused)
 }
 ```
 
-![&#x56FE;11.2](../.gitbook/assets/11.2.jpeg)
+![&#x56FE;11.2](.gitbook/assets/11.2.jpeg)
 
 图11.1 真实引力场下的木箱交互
 

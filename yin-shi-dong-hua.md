@@ -1,4 +1,4 @@
-# 隐式动画
+# 7. 隐式动画
 
 > _按照我的意思去做，而不是我说的。_ -- 埃德娜，辛普森
 
@@ -47,7 +47,7 @@ Core Animation基于一个假设，说屏幕上的任何东西都可以（或者
 @end
 ```
 
-![&#x56FE;7.1](../.gitbook/assets/7.1.jpeg)
+![&#x56FE;7.1](.gitbook/assets/7.1.jpeg)
 
 图7.1 添加一个按钮来控制图层颜色
 
@@ -122,7 +122,7 @@ Core Animation在每个_run loop_周期中自动开始一次新的事务（run l
 }
 ```
 
-![&#x56FE;7.2](../.gitbook/assets/7.2.jpeg)
+![&#x56FE;7.2](.gitbook/assets/7.2.jpeg)
 
 图7.2 颜色渐变之完成之后再做一次旋转
 
@@ -277,7 +277,7 @@ $ LayerTest[21215:c07] Inside: <CABasicAnimation: 0x757f090>
 @end
 ```
 
-![&#x56FE;7.3](../.gitbook/assets/7.3.jpeg)
+![&#x56FE;7.3](.gitbook/assets/7.3.jpeg)
 
 图7.3 使用推进过渡的色值动画
 
@@ -299,7 +299,7 @@ $ LayerTest[21215:c07] Inside: <CABasicAnimation: 0x757f090>
 
 你可能注意到有一个叫做`–modelLayer`的方法。在呈现图层上调用`–modelLayer`将会返回它正在呈现所依赖的`CALayer`。通常在一个图层上调用`-modelLayer`会返回`–self`（实际上我们已经创建的原始图层就是一种数据模型）。
 
-![&#x56FE;7.4](../.gitbook/assets/7.4.jpeg)
+![&#x56FE;7.4](.gitbook/assets/7.4.jpeg)
 
 图7.4 一个移动的图层是如何通过数据模型呈现的
 

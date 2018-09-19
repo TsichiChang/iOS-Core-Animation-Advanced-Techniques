@@ -1,4 +1,4 @@
-# 变换
+# 5. 变换
 
 > _很不幸，没人能告诉你矩阵是什么，你只能自己体会_ -- 黑客帝国
 
@@ -8,7 +8,7 @@
 
 在第三章“图层几何学”中，我们使用了`UIView`的`transform`属性旋转了钟的指针，但并没有解释背后运作的原理，实际上`UIView`的`transform`属性是一个`CGAffineTransform`类型，用于在二维空间做旋转，缩放和平移。`CGAffineTransform`是一个可以和二维空间向量（例如`CGPoint`）做乘法的3X2的矩阵（见图5.1）。
 
-![&#x56FE;5.1](../.gitbook/assets/5.1.jpeg)
+![&#x56FE;5.1](.gitbook/assets/5.1.jpeg)
 
 图5.1 用矩阵表示的`CGAffineTransform`和`CGPoint`
 
@@ -18,7 +18,7 @@
 
 当对图层应用变换矩阵，图层矩形内的每一个点都被相应地做变换，从而形成一个新的四边形的形状。`CGAffineTransform`中的“仿射”的意思是无论变换矩阵用什么值，图层中平行的两条线在变换之后任然保持平行，`CGAffineTransform`可以做出任意符合上述标注的变换，图5.2显示了一些仿射的和非仿射的变换：
 
-![&#x56FE;5.2](../.gitbook/assets/5.2.jpeg)
+![&#x56FE;5.2](.gitbook/assets/5.2.jpeg)
 
 图5.2 仿射和非仿射变换
 
@@ -36,7 +36,7 @@ CGAffineTransformMakeTranslation(CGFloat tx, CGFloat ty)
 
 我们用一个很简单的项目来做个demo，把一个原始视图旋转45度角度（图5.3）
 
-![&#x56FE;5.3](../.gitbook/assets/5.3.jpeg)
+![&#x56FE;5.3](.gitbook/assets/5.3.jpeg)
 
 图5.3 使用仿射变换旋转45度角之后的视图
 
@@ -114,7 +114,7 @@ CGAffineTransformConcat(CGAffineTransform t1, CGAffineTransform t2);
 }
 ```
 
-![&#x56FE;5.4](../.gitbook/assets/5.4.jpeg)
+![&#x56FE;5.4](.gitbook/assets/5.4.jpeg)
 
 图5.4 顺序应用多个仿射变换之后的结果
 
@@ -128,7 +128,7 @@ Core Graphics为你提供了计算变换矩阵的一些方法，所以很少需�
 
 斜切变换是放射变换的第四种类型，较于平移，旋转和缩放并不常用（这也是Core Graphics没有提供相应函数的原因），但有些时候也会很有用。我们用一张图片可以很直接的说明效果（图5.5）。也许用“倾斜”描述更加恰当，具体做变换的代码见清单5.3。
 
-![&#x56FE;5.5](../.gitbook/assets/5.5.jpeg)
+![&#x56FE;5.5](.gitbook/assets/5.5.jpeg)
 
 图5.5 水平方向的斜切变换
 
@@ -163,7 +163,7 @@ CG的前缀告诉我们，`CGAffineTransform`类型属于Core Graphics框架，C
 
 和`CGAffineTransform`类似，`CATransform3D`也是一个矩阵，但是和2x3的矩阵不同，`CATransform3D`是一个可以在3维空间内做变换的4x4的矩阵（图5.6）。
 
-![&#x56FE;5.6](../.gitbook/assets/5.6.jpeg)
+![&#x56FE;5.6](.gitbook/assets/5.6.jpeg)
 
 图5.6 对一个3D像素点做`CATransform3D`矩阵变换
 
@@ -177,7 +177,7 @@ CATransform3DMakeTranslation(Gloat tx, CGFloat ty, CGFloat tz)
 
 你应该对X轴和Y轴比较熟悉了，分别以右和下为正方向（回忆第三章，这是iOS上的标准结构，在Mac OS，Y轴朝上为正方向），Z轴和这两个轴分别垂直，指向视角外为正方向（图5.7）。
 
-![&#x56FE;5.7](../.gitbook/assets/5.7.jpeg)
+![&#x56FE;5.7](.gitbook/assets/5.7.jpeg)
 
 图5.7 X，Y，Z轴，以及围绕它们旋转的方向
 
@@ -203,7 +203,7 @@ CATransform3DMakeTranslation(Gloat tx, CGFloat ty, CGFloat tz)
 @end
 ```
 
-![&#x56FE;5.8](../.gitbook/assets/5.8.jpeg)
+![&#x56FE;5.8](.gitbook/assets/5.8.jpeg)
 
 图5.8 绕y轴旋转45度的视图
 
@@ -221,7 +221,7 @@ CATransform3DMakeTranslation(Gloat tx, CGFloat ty, CGFloat tz)
 
 `CATransform3D`的透视效果通过一个矩阵中一个很简单的元素来控制：`m34`。`m34`（图5.9）用于按比例缩放X和Y的值来计算到底要离视角多远。
 
-![&#x56FE;5.9](../.gitbook/assets/5.9.jpeg)
+![&#x56FE;5.9](.gitbook/assets/5.9.jpeg)
 
 图5.9 `CATransform3D`的`m34`元素，用来做透视
 
@@ -250,7 +250,7 @@ CATransform3DMakeTranslation(Gloat tx, CGFloat ty, CGFloat tz)
 @end
 ```
 
-![&#x56FE;5.10](../.gitbook/assets/5.10.jpeg)
+![&#x56FE;5.10](.gitbook/assets/5.10.jpeg)
 
 图5.10 应用透视效果之后再次对图层做旋转
 
@@ -260,7 +260,7 @@ CATransform3DMakeTranslation(Gloat tx, CGFloat ty, CGFloat tz)
 
 在现实中，这个点通常是视图的中心（图5.11），于是为了在应用中创建拟真效果的透视，这个点应该聚在屏幕中点，或者至少是包含所有3D对象的视图中点。
 
-![&#x56FE;5.11](../.gitbook/assets/5.11.jpeg)
+![&#x56FE;5.11](.gitbook/assets/5.11.jpeg)
 
 图5.11 灭点
 
@@ -278,7 +278,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 
 我们来用一个demo举例说明。这里用Interface Builder并排放置两个视图（图5.12），然后通过设置它们容器视图的透视变换，我们可以保证它们有相同的透视和灭点，代码见清单5.6，结果见图5.13。
 
-![&#x56FE;5.12](../.gitbook/assets/5.12.jpeg)
+![&#x56FE;5.12](.gitbook/assets/5.12.jpeg)
 
 图5.12 在一个视图容器内并排放置两个视图
 
@@ -311,7 +311,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 }
 ```
 
-![&#x56FE;5.13](../.gitbook/assets/5.13.jpeg)
+![&#x56FE;5.13](.gitbook/assets/5.13.jpeg)
 
 图5.13 通过相同的透视效果分别对视图做变换
 
@@ -321,7 +321,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 
 那么从背部看图层是什么样的呢，见图5.14
 
-![&#x56FE;5.14](../.gitbook/assets/5.14.jpeg)
+![&#x56FE;5.14](.gitbook/assets/5.14.jpeg)
 
 图5.14 视图的背面，一个镜像对称的图片
 
@@ -335,7 +335,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 
 如果对包含已经做过变换的图层的图层做反方向的变换将会发什么什么呢？是不是有点困惑？见图5.15
 
-![&#x56FE;5.15](../.gitbook/assets/5.15.jpeg)
+![&#x56FE;5.15](.gitbook/assets/5.15.jpeg)
 
 图5.15 反方向变换的嵌套图层
 
@@ -371,7 +371,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 @end
 ```
 
-![&#x56FE;5.16](../.gitbook/assets/5.16.jpeg)
+![&#x56FE;5.16](.gitbook/assets/5.16.jpeg)
 
 图5.16 旋转后的视图
 
@@ -398,7 +398,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 
 预期的效果应该如图5.17所示。
 
-![&#x56FE;5.17](../.gitbook/assets/5.17.jpeg)
+![&#x56FE;5.17](.gitbook/assets/5.17.jpeg)
 
 图5.17 绕Y轴做相反旋转的预期结果。
 
@@ -406,7 +406,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 
 这是由于尽管Core Animation图层存在于3D空间之内，但它们并不都存在_同一个_3D空间。每个图层的3D场景其实是扁平化的，当你从正面观察一个图层，看到的实际上由子图层创建的想象出来的3D场景，但当你倾斜这个图层，你会发现实际上这个3D场景仅仅是被绘制在图层的表面。
 
-![&#x56FE;5.18](../.gitbook/assets/5.18.jpeg)
+![&#x56FE;5.18](.gitbook/assets/5.18.jpeg)
 
 图5.18 绕Y轴做相反旋转的真实结果
 
@@ -422,7 +422,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 
 在这个例子中，我们用Interface Builder来构建立方体的面（图5.19），我们当然可以用代码来写，但是用Interface Builder的好处是可以方便的在每一个面上添加子视图。记住这些面仅仅是包含视图和控件的普通的用户界面元素，它们完全是我们界面交互的部分，并且当把它折成一个立方体之后也不会改变这个性质。
 
-![&#x56FE;5.19](../.gitbook/assets/5.19.jpeg)
+![&#x56FE;5.19](.gitbook/assets/5.19.jpeg)
 
 图5.19 用Interface Builder对立方体的六个面进行布局
 
@@ -491,7 +491,7 @@ Core Animation定义了这个点位于变换图层的`anchorPoint`（通常位�
 @end
 ```
 
-![&#x56FE;5.20](../.gitbook/assets/5.20.jpeg)
+![&#x56FE;5.20](.gitbook/assets/5.20.jpeg)
 
 图5.20 正面朝上的立方体
 
@@ -508,7 +508,7 @@ perspective = CATransform3DRotate(perspective, -M_PI_4, 0, 1, 0);
 
 这就对相机（或者相对相机的整个场景，你也可以这么认为）绕Y轴旋转45度，并且绕X轴旋转45度。现在从另一个角度去观察立方体，就能看出它的真实面貌（图5.21）。
 
-![&#x56FE;5.21](../.gitbook/assets/5.21.jpeg)
+![&#x56FE;5.21](.gitbook/assets/5.21.jpeg)
 
 图5.21 从一个边角观察的立方体
 
@@ -617,7 +617,7 @@ perspective = CATransform3DRotate(perspective, -M_PI_4, 0, 1, 0);
 @end
 ```
 
-![&#x56FE;5.22](../.gitbook/assets/5.22.jpeg)
+![&#x56FE;5.22](.gitbook/assets/5.22.jpeg)
 
 图5.22 动态计算光线效果之后的立方体
 
@@ -633,7 +633,7 @@ perspective = CATransform3DRotate(perspective, -M_PI_4, 0, 1, 0);
 
 这里有几种正确的方案：把除了表面3的其他视图`userInteractionEnabled`属性都设置成`NO`来禁止事件传递。或者简单通过代码把视图3覆盖在视图6上。无论怎样都可以点击按钮了（图5.23）。
 
-![&#x56FE;5.23](../.gitbook/assets/5.23.jpeg)
+![&#x56FE;5.23](.gitbook/assets/5.23.jpeg)
 
 图5.23 背景视图不再阻碍按钮，我们可以点击它了
 

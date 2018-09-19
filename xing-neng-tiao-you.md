@@ -1,4 +1,4 @@
-# 性能调优
+# 12. 性能调优
 
 > _代码应该运行的尽量快，而不是更快_ - 理查德
 
@@ -100,7 +100,7 @@ Instruments是Xcode套件中没有被充分利用的一个工具。很多iOS开�
 
 你可以通过在菜单中选择Profile选项来打开Instruments（在这之前，记住要把目标设置成iOS设备，而不是模拟器）。然后将会显示出图12.1（如果没有看到所有选项，你可能设置成了模拟器选项）。
 
-![&#x56FE;12.1](../.gitbook/assets/12.1.jpeg)
+![&#x56FE;12.1](.gitbook/assets/12.1.jpeg)
 
 图12.1 Instruments工具选项窗口
 
@@ -114,7 +114,7 @@ Instruments是Xcode套件中没有被充分利用的一个工具。很多iOS开�
 
 Instruments的一个很棒的功能在于它可以创建我们自定义的工具集。除了你初始选择的工具之外，如果在Instruments中打开Library窗口，你可以拖拽别的工具到左侧边栏。我们将创建以上我们提到的三个工具，然后就可以并行使用了（见图12.2）。
 
-![&#x56FE;12.2](../.gitbook/assets/12.2.jpeg)
+![&#x56FE;12.2](.gitbook/assets/12.2.jpeg)
 
 图12.2 添加额外的工具到Instruments侧边栏
 
@@ -124,7 +124,7 @@ Instruments的一个很棒的功能在于它可以创建我们自定义的工具
 
 但是如果你有性能问题，查看CPU时间对于判断性能是不是和CPU相关，以及定位到函数都很有帮助（见图12.3）。
 
-![&#x56FE;12.3](../.gitbook/assets/12.3.jpeg)
+![&#x56FE;12.3](.gitbook/assets/12.3.jpeg)
 
 图12.3 时间分析器工具
 
@@ -138,7 +138,7 @@ Instruments的一个很棒的功能在于它可以创建我们自定义的工具
 
 Core Animation工具用来监测Core Animation性能。它给我们提供了周期性的FPS，并且考虑到了发生在程序之外的动画（见图12.4）。
 
-![&#x56FE;12.4](../.gitbook/assets/12.4.jpeg)
+![&#x56FE;12.4](.gitbook/assets/12.4.jpeg)
 
 图12.4 使用可视化调试选项的Core Animation工具
 
@@ -155,7 +155,7 @@ Core Animation工具也提供了一系列复选框选项来帮助调试渲染瓶
 
 这些高亮图层的选项同样在iOS模拟器的调试菜单也可用（图12.5）。我们之前说过用模拟器测试性能并不好，但如果你能通过这些高亮选项识别出性能问题出在什么地方的话，那么使用iOS模拟器来验证问题是否解决也是比真机测试更有效的。
 
-![&#x56FE;12.5](../.gitbook/assets/12.5.jpeg)
+![&#x56FE;12.5](.gitbook/assets/12.5.jpeg)
 
 图12.5 iOS模拟器中Core Animation可视化调试选项
 
@@ -163,7 +163,7 @@ Core Animation工具也提供了一系列复选框选项来帮助调试渲染瓶
 
 OpenGL ES驱动工具可以帮你测量GPU的利用率，同样也是一个很好的来判断和GPU相关动画性能的指示器。它同样也提供了类似Core Animation那样显示FPS的工具（图12.6）。
 
-![&#x56FE;12.6](../.gitbook/assets/12.6.jpeg)
+![&#x56FE;12.6](.gitbook/assets/12.6.jpeg)
 
 图12.6 OpenGL ES驱动工具
 
@@ -254,19 +254,19 @@ OpenGL ES驱动工具可以帮你测量GPU的利用率，同样也是一个很�
 
 当快速滑动的时候就会非常卡（见图12.7的FPS计数器）。
 
-![&#x56FE;12.7](../.gitbook/assets/12.7.jpeg)
+![&#x56FE;12.7](.gitbook/assets/12.7.jpeg)
 
 图12.7 滑动帧率降到15FPS
 
 仅凭直觉，我们猜测性能瓶颈应该在图片加载。我们实时从闪存加载图片，而且没有缓存，所以很可能是这个原因。我们可以用一些很赞的代码修复，然后使用GCD异步加载图片，然后缓存。。。等一下，在开始编码之前，测试一下假设是否成立。首先用我们的三个Instruments工具分析一下程序来定位问题。我们推测问题可能和图片加载相关，所以用Time Profiler工具来试试（图12.8）。
 
-![&#x56FE;12.8](../.gitbook/assets/12.8.jpeg)
+![&#x56FE;12.8](.gitbook/assets/12.8.jpeg)
 
 图12.8 用The timing profile分析联系人列表
 
 `-tableView:cellForRowAtIndexPath:`中的CPU时间总利用率只有~28%（也就是加载头像图片的地方），非常低。于是建议是CPU/IO并不是真正的限制因素。然后看看是不是GPU的问题：在OpenGL ES Driver工具中检测GPU利用率（图12.9）。
 
-![&#x56FE;12.9](../.gitbook/assets/12.9.jpeg)
+![&#x56FE;12.9](.gitbook/assets/12.9.jpeg)
 
 图12.9 OpenGL ES Driver工具显示的GPU利用率
 
@@ -274,7 +274,7 @@ OpenGL ES驱动工具可以帮你测量GPU的利用率，同样也是一个很�
 
 为什么GPU利用率这么高呢？我们来用Core Animation调试工具选项来检查屏幕。首先打开Color Blended Layers（图12.10）。
 
-![&#x56FE;12.10](../.gitbook/assets/12.10.jpeg)
+![&#x56FE;12.10](.gitbook/assets/12.10.jpeg)
 
 图12.10 使用Color Blended Layers选项调试程序
 
@@ -282,13 +282,13 @@ OpenGL ES驱动工具可以帮你测量GPU的利用率，同样也是一个很�
 
 那么离屏绘制呢？打开Core Animation工具的Color Offscreen - Rendered Yellow选项（图12.11）。
 
-![&#x56FE;12.11](../.gitbook/assets/12.11.jpeg)
+![&#x56FE;12.11](.gitbook/assets/12.11.jpeg)
 
 图12.11 Color Offscreen–Rendered Yellow选项
 
 所有的表格单元内容都在离屏绘制。这一定是因为我们给图片和标签视图添加的阴影效果。在代码中禁用阴影，然后看下性能是否有提高（图12.12）。
 
-![&#x56FE;12.12](../.gitbook/assets/12.12.jpeg)
+![&#x56FE;12.12](.gitbook/assets/12.12.jpeg)
 
 图12.12 禁用阴影之后运行程序接近60FPS
 
@@ -318,7 +318,7 @@ OpenGL ES驱动工具可以帮你测量GPU的利用率，同样也是一个很�
 
 我们仍然离屏绘制图层内容，但是由于显式地禁用了栅格化，Core Animation就对绘图缓存了结果，于是对提高了性能。我们可以验证缓存是否有效，在Core Animation工具中点击Color Hits Green and Misses Red选项（图12.13）。
 
-![&#x56FE;12.13](../.gitbook/assets/12.13.jpeg)
+![&#x56FE;12.13](.gitbook/assets/12.13.jpeg)
 
 图12.13 Color Hits Green and Misses Red验证了缓存有效
 

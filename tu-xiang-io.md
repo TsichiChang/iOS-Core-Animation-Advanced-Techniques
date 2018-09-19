@@ -1,4 +1,4 @@
-# 图像IO
+# 14. 图像IO
 
 _潜伏期值得思考_ - 凯文 帕萨特
 
@@ -73,13 +73,13 @@ _潜伏期值得思考_ - 凯文 帕萨特
 @end
 ```
 
-![&#x56FE;14.1](../.gitbook/assets/14.1.jpeg)
+![&#x56FE;14.1](.gitbook/assets/14.1.jpeg)
 
 图14.1 运行中的图片传送器
 
 传送器中的图片尺寸为800x600像素的PNG，对iPhone5来说，1/60秒要加载大概700KB左右的图片。当传送器滚动的时候，图片也在实时加载，于是（预期中的）卡动就发生了。时间分析工具（图14.2）显示了很多时间都消耗在了`UIImage`的`+imageWithContentsOfFile:`方法中了。很明显，图片加载造成了瓶颈。
 
-![&#x56FE;14.2](../.gitbook/assets/14.2.jpeg)
+![&#x56FE;14.2](.gitbook/assets/14.2.jpeg)
 
 图14.2 时间分析工具展示了CPU瓶颈
 
@@ -135,7 +135,7 @@ GCD（Grand Central Dispatch）和`NSOperationQueue`很类似，都给我们提�
 
 我们可以看到`+imageWithContentsOfFile:`方法并不在CPU时间轨迹的最顶部，所以我们的确修复了延迟加载的问题。问题在于我们假设传送器的性能瓶颈在于图片文件的加载，但实际上并不是这样。加载图片数据到内存中只是问题的第一部分。
 
-![&#x56FE;14.3](../.gitbook/assets/14.3.jpeg)
+![&#x56FE;14.3](.gitbook/assets/14.3.jpeg)
 
 图14.3 使用后台线程加载图片来提升性能
 
@@ -301,7 +301,7 @@ CFRelease(source);
 
 结果`CATiledLayer`工作的很好，性能问题解决了，而且和用GCD实现的代码量差不多。仅有一个问题在于图片加载到屏幕上后有一个明显的淡入（图14.4）。
 
-![&#x56FE;14.4](../.gitbook/assets/14.4.jpeg)
+![&#x56FE;14.4](.gitbook/assets/14.4.jpeg)
 
 图14.4 加载图片之后的淡入
 
@@ -565,7 +565,7 @@ static NSString *const ImageFolder = @"Coast Photos";
 
 PNG和JPEG压缩算法作用于两种不同的图片类型：JPEG对于噪点大的图片效果很好；但是PNG更适合于扁平颜色，锋利的线条或者一些渐变色的图片。为了让测评的基准更加公平，我们用一些不同的图片来做实验：一张照片和一张彩虹色的渐变。JPEG版本的图片都用默认的Photoshop60%“高质量”设置编码。结果见图片14.5。
 
-![&#x56FE;14.5](../.gitbook/assets/14.5.jpeg)
+![&#x56FE;14.5](.gitbook/assets/14.5.jpeg)
 
 图14.5 不同类型图片的相对加载性能
 

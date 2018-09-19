@@ -1,4 +1,4 @@
-# 缓冲
+# 10. 缓冲
 
 > 生活和艺术一样，最美的永远是曲线。 -- 爱德华布尔沃 - 利顿
 
@@ -206,7 +206,7 @@ UIViewAnimationOptionCurveLinear
 
 `CAMediaTimingFunction`函数的主要原则在于它把输入的时间转换成起点和终点之间成比例的改变。我们可以用一个简单的图标来解释，横轴代表时间，纵轴代表改变的量，于是线性的缓冲就是一条从起点开始的简单的斜线（图10.1）。
 
-![&#x56FE;10.1](../.gitbook/assets/10.1.jpeg)
+![&#x56FE;10.1](.gitbook/assets/10.1.jpeg)
 
 图10.1 线性缓冲函数的图像
 
@@ -216,7 +216,7 @@ UIViewAnimationOptionCurveLinear
 
 图10.2展示了一个三次贝塞尔缓冲函数的例子
 
-![&#x56FE;10.2](../.gitbook/assets/10.2.jpeg)
+![&#x56FE;10.2](.gitbook/assets/10.2.jpeg)
 
 图10.2 三次贝塞尔缓冲函数
 
@@ -267,7 +267,7 @@ UIViewAnimationOptionCurveLinear
 @end
 ```
 
-![&#x56FE;10.3](../.gitbook/assets/10.3.jpeg)
+![&#x56FE;10.3](.gitbook/assets/10.3.jpeg)
 
 图10.3 标准`CAMediaTimingFunction`缓冲曲线
 
@@ -279,7 +279,7 @@ UIViewAnimationOptionCurveLinear
 
 如果把它转换成缓冲函数的图像，最后如图10.4所示，如果把它添加到时钟的程序，就形成了之前一直期待的非常赞的效果（见代清单10.5）。
 
-![&#x56FE;10.4](../.gitbook/assets/10.4.jpeg)
+![&#x56FE;10.4](.gitbook/assets/10.4.jpeg)
 
 图10.4 自定义适合时钟的缓冲函数
 
@@ -313,7 +313,7 @@ UIViewAnimationOptionCurveLinear
 
 考虑一个橡胶球掉落到坚硬的地面的场景，当开始下落的时候，它会持续加速知道落到地面，然后经过几次反弹，最后停下来。如果用一张图来说明，它会如图10.5所示。
 
-![&#x56FE;10.5](../.gitbook/assets/10.5.jpeg)
+![&#x56FE;10.5](.gitbook/assets/10.5.jpeg)
 
 图10.5 一个没法用三次贝塞尔曲线描述的反弹的动画
 
@@ -396,7 +396,7 @@ UIViewAnimationOptionCurveLinear
 @end
 ```
 
-![&#x56FE;10.6](../.gitbook/assets/10.6.jpeg)
+![&#x56FE;10.6](.gitbook/assets/10.6.jpeg)
 
 图10.6 使用关键帧实现的反弹球动画
 

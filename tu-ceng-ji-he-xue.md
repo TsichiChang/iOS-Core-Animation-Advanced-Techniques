@@ -1,4 +1,4 @@
-# 图层几何学
+# 3. 图层几何学
 
 > _不熟悉几何学的人就不要来这里了_ --柏拉图学院入口的签名
 
@@ -10,7 +10,7 @@
 
 `frame`代表了图层的外部坐标（也就是在父图层上占据的空间），`bounds`是内部坐标（{0, 0}通常是图层的左上角），`center`和`position`都代表了相对于父图层`anchorPoint`所在的位置。`anchorPoint`的属性将会在后续介绍到，现在把它想成图层的中心点就好了。图3.1显示了这些属性是如何相互依赖的。
 
-![&#x56FE;3.1](../.gitbook/assets/3.1.jpeg)
+![&#x56FE;3.1](.gitbook/assets/3.1.jpeg)
 
 图3.1 `UIView`和`CALayer`的坐标系
 
@@ -20,7 +20,7 @@
 
 记住当对图层做变换的时候，比如旋转或者缩放，`frame`实际上代表了覆盖在图层旋转之后的整个轴对齐的矩形区域，也就是说`frame`的宽高可能和`bounds`的宽高不再一致了（图3.2）
 
-![&#x56FE;3.2](../.gitbook/assets/3.2.jpeg)
+![&#x56FE;3.2](.gitbook/assets/3.2.jpeg)
 
 图3.2 旋转一个视图或者图层之后的`frame`属性
 
@@ -30,7 +30,7 @@
 
 默认来说，`anchorPoint`位于图层的中点，所以图层的将会以这个点为中心放置。`anchorPoint`属性并没有被`UIView`接口暴露出来，这也是视图的position属性被叫做“center”的原因。但是图层的`anchorPoint`可以被移动，比如你可以把它置于图层`frame`的左上角，于是图层的内容将会向右下角的`position`方向移动（图3.3），而不是居中了。
 
-![&#x56FE;3.3](../.gitbook/assets/3.3.jpeg)
+![&#x56FE;3.3](.gitbook/assets/3.3.jpeg)
 
 图3.3 改变`anchorPoint`的效果
 
@@ -42,7 +42,7 @@
 
 钟面和钟表由四张图片组成（图3.4），为了简单说明，我们还是用传统的方式来装载和加载图片，使用四个`UIImageView`实例（当然你也可以用正常的视图，设置他们图层的`contents`图片）。
 
-![&#x56FE;3.4](../.gitbook/assets/3.4.jpeg)
+![&#x56FE;3.4](.gitbook/assets/3.4.jpeg)
 
 图3.4 组成钟面和钟表的四张图片
 
@@ -50,7 +50,7 @@
 
 我们用`NSTimer`来更新闹钟，使用视图的`transform`属性来旋转钟表（如果你对这个属性不太熟悉，不要着急，我们将会在第5章“变换”当中详细说明），具体代码见清单3.1
 
-![&#x56FE;3.5](../.gitbook/assets/3.5.jpeg)
+![&#x56FE;3.5](.gitbook/assets/3.5.jpeg)
 
 图3.5 在Interface Builder中布局闹钟视图
 
@@ -100,7 +100,7 @@
 
 运行项目，看起来有点奇怪（图3.6），因为钟表的图片在围绕着中心旋转，这并不是我们期待的一个支点。
 
-![&#x56FE;3.6](../.gitbook/assets/3.6.jpeg)
+![&#x56FE;3.6](.gitbook/assets/3.6.jpeg)
 
 图3.6 钟面，和不对齐的钟指针
 
@@ -127,7 +127,7 @@
 }
 ```
 
-![&#x56FE;3.7](../.gitbook/assets/3.7.jpeg)
+![&#x56FE;3.7](.gitbook/assets/3.7.jpeg)
 
 图3.7 钟面，和正确对齐的钟指针
 
@@ -164,7 +164,7 @@
 
 图3.8显示了在Interface Builder内的一对视图，正如你所见，首先出现在视图层级绿色的视图被绘制在红色视图的后面。
 
-![&#x56FE;3.8](../.gitbook/assets/3.8.jpeg)
+![&#x56FE;3.8](.gitbook/assets/3.8.jpeg)
 
 图3.8 在视图层级中绿色视图被绘制在红色视图的后面
 
@@ -192,7 +192,7 @@
 @end
 ```
 
-![&#x56FE;3.9](../.gitbook/assets/3.9.jpeg)
+![&#x56FE;3.9](.gitbook/assets/3.9.jpeg)
 
 图3.9 绿色视图被绘制在红色视图的前面
 
@@ -256,7 +256,7 @@
 @end
 ```
 
-![&#x56FE;3.10](../.gitbook/assets/3.10.jpeg)
+![&#x56FE;3.10](.gitbook/assets/3.10.jpeg)
 
 图3.10 点击图层被正确标识
 

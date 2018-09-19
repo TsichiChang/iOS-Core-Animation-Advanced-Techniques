@@ -1,4 +1,4 @@
-# 6-专有图层
+# 6. 专有图层
 
 ## 专用图层
 
@@ -69,7 +69,7 @@
 @end
 ```
 
-![&#x56FE;6.1](../.gitbook/assets/6.1.png)
+![&#x56FE;6.1](.gitbook/assets/6.1.png)
 
 图6.1 用`CAShapeLayer`绘制一个简单的火柴人
 
@@ -145,7 +145,7 @@ UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorn
 @end
 ```
 
-![&#x56FE;6.2](../.gitbook/assets/6.2.png)
+![&#x56FE;6.2](.gitbook/assets/6.2.png)
 
 图6.2 用`CATextLayer`来显示一个纯文本标签
 
@@ -157,7 +157,7 @@ textLayer.contentsScale = [UIScreen mainScreen].scale;
 
 这样就解决了这个问题（如图6.3）
 
-![&#x56FE;6.3](../.gitbook/assets/6.3.png)
+![&#x56FE;6.3](.gitbook/assets/6.3.png)
 
 图6.3 设置`contentsScale`来匹配屏幕
 
@@ -240,7 +240,7 @@ iOS 6中，Apple给`UILabel`和其他UIKit文本视图添加了直接的属性�
 @end
 ```
 
-![&#x56FE;6.4](../.gitbook/assets/6.4.png)
+![&#x56FE;6.4](.gitbook/assets/6.4.png)
 
 图6.4 用CATextLayer实现一个富文本标签。
 
@@ -455,7 +455,7 @@ iOS 6中，Apple给`UILabel`和其他UIKit文本视图添加了直接的属性�
 @end
 ```
 
-![&#x56FE;6.5](../.gitbook/assets/6.5.png)
+![&#x56FE;6.5](.gitbook/assets/6.5.png)
 
 图6.5 同一视角下的俩不同变换的立方体
 
@@ -498,7 +498,7 @@ iOS 6中，Apple给`UILabel`和其他UIKit文本视图添加了直接的属性�
 @end
 ```
 
-![&#x56FE;6.6](../.gitbook/assets/6.6.png)
+![&#x56FE;6.6](.gitbook/assets/6.6.png)
 
 图6.6 用`CAGradientLayer`实现简单的两种颜色的对角线渐变
 
@@ -533,7 +533,7 @@ iOS 6中，Apple给`UILabel`和其他UIKit文本视图添加了直接的属性�
 }
 ```
 
-![&#x56FE;6.7](../.gitbook/assets/6.7.png)
+![&#x56FE;6.7](.gitbook/assets/6.7.png)
 
 图6.7 用`locations`构造偏移至左上角的三色渐变
 
@@ -588,7 +588,7 @@ iOS 6中，Apple给`UILabel`和其他UIKit文本视图添加了直接的属性�
 @end
 ```
 
-![&#x56FE;6.8](../.gitbook/assets/6.8.png)
+![&#x56FE;6.8](.gitbook/assets/6.8.png)
 
 图6.8 用`CAReplicatorLayer`创建一圈图层
 
@@ -645,11 +645,11 @@ iOS 6中，Apple给`UILabel`和其他UIKit文本视图添加了直接的属性�
 @end
 ```
 
-![&#x56FE;6.9](../.gitbook/assets/6.9.png)
+![&#x56FE;6.9](.gitbook/assets/6.9.png)
 
 图6.9 在Interface Builder中使用`ReflectionView`
 
-![&#x56FE;6.10](../.gitbook/assets/6.10.png)
+![&#x56FE;6.10](.gitbook/assets/6.10.png)
 
 图6.10 `ReflectionView`自动实时产生反射效果。
 
@@ -879,7 +879,7 @@ Snowman_07_07.jpg
 @end
 ```
 
-![&#x56FE;6.12](../.gitbook/assets/6.12.png)
+![&#x56FE;6.12](.gitbook/assets/6.12.png)
 
 图6.12 用`UIScrollView`滚动`CATiledLayer`
 
@@ -971,7 +971,7 @@ NSInteger y = floor(bounds.origin.y / layer.tileSize.height * scale);
 * `preservesDepth`，是否将3D粒子系统平面化到一个图层（默认值）或者可以在3D空间中混合其他的图层。
 * `renderMode`，控制着在视觉上粒子图片是如何混合的。你可能已经注意到了示例中我们把它设置为`kCAEmitterLayerAdditive`，它实现了这样一个效果：合并粒子重叠部分的亮度使得看上去更亮。如果我们把它设置为默认的`kCAEmitterLayerUnordered`，效果就没那么好看了（见图6.14）。
 
-![&#x56FE;6.14](../.gitbook/assets/6.14.png)
+![&#x56FE;6.14](.gitbook/assets/6.14.png)
 
 图6.14 禁止混色之后的火焰粒子
 
@@ -1120,7 +1120,7 @@ OpenGL提供了Core Animation的基础，它是底层的C接口，直接和iPhon
 @end
 ```
 
-![&#x56FE;6.15](../.gitbook/assets/6.15.png)
+![&#x56FE;6.15](.gitbook/assets/6.15.png)
 
 图6.15 用OpenGL渲染的`CAEAGLLayer`图层
 
@@ -1167,7 +1167,7 @@ OpenGL提供了Core Animation的基础，它是底层的C接口，直接和iPhon
 @end
 ```
 
-![](../.gitbook/assets/6.16.png)
+![](.gitbook/assets/6.16.png)
 
 图6.16 用`AVPlayerLayer`图层播放视频的截图
 
@@ -1202,7 +1202,7 @@ OpenGL提供了Core Animation的基础，它是底层的C接口，直接和iPhon
 }
 ```
 
-![](../.gitbook/assets/6.17.png)
+![](.gitbook/assets/6.17.png)
 
 图6.17 3D视角下的边框和圆角`AVPlayerLayer`
 

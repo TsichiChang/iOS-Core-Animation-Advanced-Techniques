@@ -1,4 +1,4 @@
-# 图层性能
+# 15. 图层性能
 
 > 要更快性能，也要做对正确的事情。 ——Stephen R. Covey
 
@@ -203,7 +203,7 @@ Core Animation非常擅长处理对视觉效果无意义的图层。但是经常
 @end
 ```
 
-![](../.gitbook/assets/15.1.png)
+![](.gitbook/assets/15.1.png)
 
 图15.1 滚动的3D图层矩阵
 

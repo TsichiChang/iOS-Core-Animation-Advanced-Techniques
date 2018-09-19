@@ -1,4 +1,4 @@
-# 图层时间
+# 9. 图层时间
 
 > _时间和空间最大的区别在于，时间不能被复用_ -- 弗斯特梅里克
 
@@ -81,13 +81,13 @@
 @end
 ```
 
-![&#x56FE;9.1](../.gitbook/assets/9.1.jpeg)
+![&#x56FE;9.1](.gitbook/assets/9.1.jpeg)
 
 图9.1 演示`duration`和`repeatCount`的测试程序
 
 创建重复动画的另一种方式是使用`repeatDuration`属性，它让动画重复一个指定的时间，而不是指定次数。你甚至设置一个叫做`autoreverses`的属性（BOOL类型）在每次间隔交替循环过程中自动回放。这对于播放一段连续非循环的动画很有用，例如打开一扇门，然后关上它（图9.2）。
 
-![&#x56FE;9.2](../.gitbook/assets/9.2.jpeg)
+![&#x56FE;9.2](.gitbook/assets/9.2.jpeg)
 
 图9.2 摆动门的动画
 
@@ -211,7 +211,7 @@
 @end
 ```
 
-![&#x56FE;9.3](../.gitbook/assets/9.3.jpeg)
+![&#x56FE;9.3](.gitbook/assets/9.3.jpeg)
 
 图9.3 测试时间偏移和速度的简单的应用程序
 

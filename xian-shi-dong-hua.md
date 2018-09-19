@@ -1,4 +1,4 @@
-# 显式动画
+# 8. 显式动画
 
 > 如果想让事情变得顺利，只有靠自己 -- 夏尔·纪尧姆
 
@@ -392,7 +392,7 @@ _关键帧_起源于传动动画，意思是指主导的动画在显著改变发
 @end
 ```
 
-![&#x56FE;8.1](../.gitbook/assets/8.1.jpeg)
+![&#x56FE;8.1](.gitbook/assets/8.1.jpeg)
 
 图8.1 沿着一个贝塞尔曲线移动的宇宙飞船图片
 
@@ -418,7 +418,7 @@ _关键帧_起源于传动动画，意思是指主导的动画在显著改变发
 }
 ```
 
-![&#x56FE;8.2](../.gitbook/assets/8.2.jpeg)
+![&#x56FE;8.2](.gitbook/assets/8.2.jpeg)
 
 图8.2 匹配曲线切线方向的飞船图层
 
@@ -558,7 +558,7 @@ _关键帧_起源于传动动画，意思是指主导的动画在显著改变发
 }
 ```
 
-![&#x56FE;8.3](../.gitbook/assets/8.3.jpeg)
+![&#x56FE;8.3](.gitbook/assets/8.3.jpeg)
 
 图8.3 关键帧路径和基础动画的组合
 
@@ -638,7 +638,7 @@ kCATransitionFromBottom
 
 你可以从代码中看出，过渡动画和之前的属性动画或者动画组添加到图层上的方式一致，都是通过`-addAnimation:forKey:`方法。但是和属性动画不同的是，对指定的图层一次只能使用一次`CATransition`，因此，无论你对动画的键设置什么值，过渡动画都会对它的键设置成“transition”，也就是常量`kCATransition`。
 
-![&#x56FE;8.4](../.gitbook/assets/8.4.jpeg)
+![&#x56FE;8.4](.gitbook/assets/8.4.jpeg)
 
 图8.4 使用`CATransition`对图像平滑淡入淡出
 
@@ -785,7 +785,7 @@ UIViewAnimationOptionTransitionFlipFromBottom
 @end
 ```
 
-![&#x56FE;8.5](../.gitbook/assets/8.5.jpeg)
+![&#x56FE;8.5](.gitbook/assets/8.5.jpeg)
 
 图8.5 使用`renderInContext:`创建自定义过渡效果
 
@@ -861,7 +861,7 @@ UIViewAnimationOptionTransitionFlipFromBottom
 @end
 ```
 
-![&#x56FE;8.6](../.gitbook/assets/8.6.jpeg)
+![&#x56FE;8.6](.gitbook/assets/8.6.jpeg)
 
 图8.6 通过开始和停止按钮控制的旋转动画
 
